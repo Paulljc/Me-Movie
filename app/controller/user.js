@@ -173,7 +173,7 @@ exports.user_list = function(req, res) {
  */
 exports.add_user = function(req, res) {
     res.render('add_user', {
-        title: '用户用户录入页',
+        title: '用户录入页',
         user: {
             name: '',
             password: '',
