@@ -54,4 +54,7 @@ bcryptjs： bcryptjs是一个第三方密码加密库。
 
 connect-mongo：使session信息创建后储存在moogoose连接的数据库中。
 
-因为时间问题，不详细说明目录或具体操作细节，后续有时间再进行更新。
+新上传的数据库数据可以直接导入你的MongoDB中，用 mongorestore.exe -d db_name (文件夹所在目录) ，记得是要在数据库开启的时候导入
+
+
+因为时间问题，很多细节没办法弄得很好，请谅解，后续有时间再进行更新。
