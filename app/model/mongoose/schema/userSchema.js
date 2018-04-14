@@ -5,7 +5,7 @@
 const mongoose = require('mongoose');
 const bcryptjs = require('bcryptjs');//bcryptjs是一个第三方密码加密库，是对原有bcrypt的优化，优点是不需要安装任何依赖
 
-const SALT_WORK_FACTOR = 10; // bcrypt 盐的强度
+const SALT_WORK_FACTOR = 10; //盐的强度 表示密码加密的计算强度，从1级到10级，强度越高，密码越复杂，计算时间也越长。
 
 /**
  * 定义一个 Schema 模式
@@ -44,7 +44,7 @@ let userSchema = new mongoose.Schema({
 
 /**
  * Schema 不仅定义了文档结构和使用性能，还可以有扩展插件、实例方法、静态方法、复合索引、文档生命周期钩子
- * pre('save') 每次 save 时都会调用此方法
+ * pre('save') 每次 save 时都会调用此方法 使用pre中间件在用户信息存储前进行密码加密
  *      如果数据是新加的，创建时间、更新时间都显示当前时间
  *      如果数据已经有了，只更新时间显示当前时间
  */
