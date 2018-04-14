@@ -13,8 +13,9 @@ npm install 安装依赖
 因为第一次数据库初始化在Schema中身份是超级管理员
 可以直接进行注册，注册完成之后自己去改一下用户表修改权限
 
-技术栈
-【前端】
+### 技术栈
+
+####前端
 
 HTML/CSS/JS：前端必备三件套
 
@@ -24,9 +25,9 @@ Monment.js：时间日期格式化插件
 
 jQuery：主要用到 jQuery 的 ajax 方法处理表单异步请求和一些 DOM 操作
 
-Bootstrap： UI 框架，响应式，烂大街的样式
+Bootstrap： UI 框架，响应式
 
-【后端】
+#### 后端
 
 pug：pug (以前叫 jade) 是一个高性能的模板引擎，用来生成 HTML
 
@@ -34,19 +35,19 @@ Node.js：整个后端由 Node.js 驱动 ，用 npm 安装依赖包
 
 Express：一个基于 Node.js 平台的 web 开发框架，由路由和中间件构成
 
-【数据库】
+#### 数据库
 
 mongoDB：进行数据存储的 NoSQL 数据库(文档型)
 
 mongoose：Node.js 的 mongodb 驱动软件包，是进行 mongoDB 快速建模的工具
 
-【自动化构建】
+#### 自动化构建
 
-gulp：前端自动化构建工具
+gulp：基于流的自动化构建工具,操作简单。建议可以学习一下主流的webpack
 
 JSHint：JS 代码校验
 
-【依赖包】
+#### 依赖包
 
 underscore：underscore提供了一套完善的函数式编程的接口，让我们更方便地在JavaScript中实现函数式编程，会把自身绑定到唯一的全局变量_上。(自行了解)
 
