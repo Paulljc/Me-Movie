@@ -58,19 +58,19 @@ userSchema.pre('save', function(next) {
     } else {
         this.meta.updateAt = Date.now();
     }
-
-    // 先生成一个随机的的盐，再 hash 加密 异步
-    bcryptjs.genSalt(SALT_WORK_FACTOR, function(err, salt) {    //随机生成salt
+   
+    //进行加密
+    bcryptjs.genSalt(SALT_WORK_FACTOR, function(err, salt) {    
         if (err) {
             return next(err);
         }
 
-        bcryptjs.hash(user.password, salt, function(err, hash) { //salt 和 password 进行hash
+        bcryptjs.hash(user.password, salt, function(err, hash) { 
             if (err) {
                 return next(err);
             }
 
-            user.password = hash;// 生成的hash为加密密码
+            user.password = hash;
             next();
         })
     })
