@@ -38,7 +38,7 @@ module.exports = function(app) {
     app.post('/detail/comment', userController.user_req, commentController.comment_save);
 
     // category
-    //渲染添加电影分类页面    ???
+    //渲染添加电影分类页面 ok
     app.get('/admin/add_category', userController.user_req, userController.admin_req, categoryController.add_category);
     //保存电影业务逻辑  ok
     app.post('/admin/save_category', userController.user_req, userController.admin_req, categoryController.save_category);
