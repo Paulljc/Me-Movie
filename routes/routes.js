@@ -21,6 +21,7 @@ module.exports = function(app) {
     // index  ok
     app.get('/', indexController.index);
 
+    //user_req 判断用户是否登录中间件  admin_req 判断用户是否为管理员权限 第三个函数才是业务逻辑处理函数
     // movie
     app.get('/detail/:id', movieController.detail);//get 调用detail方法 用req.params.id取得具体点击了哪个 ok
     //调用add_movie方法 后台电影录入页 渲染add_movie.pug
