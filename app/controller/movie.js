@@ -4,9 +4,9 @@
 
 const movieModel = require('../model/mongoose/model/movieModel');
 const commentModel = require('../model/mongoose/model/commentModel');
-const _ = require('underscore');//引入underscore
+const _ = require('underscore'); // 引入underscore
 
-// GET detail page.
+// 获取电影详情页 get 
 exports.detail = function(req, res) {
     // 取到 url '/detail/:id' 中的 id
     let id = req.params.id;
@@ -14,8 +14,6 @@ exports.detail = function(req, res) {
     movieModel.findById(id, function(err, movie) {
         // 取到该电影的评论数据
         commentModel.find({ movie: id }, function(err, comments) {
-            console.log(comments);
-
             if (err) {
                 console.log(err);
             }
@@ -26,31 +24,30 @@ exports.detail = function(req, res) {
                 comments: comments
             });
         });
-
     });
 };
 
-// GET add_movie page.
+// 获取电影录入页 get
 exports.add_movie = function(req, res) {
     res.render('add_movie', {
         title: '后台电影录入页',
         movie: {
             title: 'movie-name',
             doctor: 'me',
-            country: '美国',
+            country: 'china',
             year: '2018',
             poster: 'http://r3.ykimg.com/05160000530EEB63675839160D0B79D5',
             flash: 'http://player.youku.com/player.php/sid/XNjA1Njc0NTUy/v.swf',
             summary: 'summary',
-            language: '英语'
+            language: 'chinese'
         }
     });
 };
 
-// add_movie page - post
+// 电影添加/修改逻辑 post
 exports.movie_save = function(req, res) {
     let id = req.body.movie._id;
-    let movieObj = req.body.movie;
+    let movieObj = req.body.movie; // 注意传的是一个对象
     let postMovie = null;
 
     // 若 id 存在则更新，不存在就创建
@@ -62,18 +59,16 @@ exports.movie_save = function(req, res) {
 
             // postMovie = Object.assign({}, movie, movieObj);
             // 用 underscore 替换对象
-            postMovie = _.extend(movie, movieObj);//同理 将movieObj对象的所有属性复制给movie，再返回movie
+            postMovie = _.extend(movie, movieObj);// 将movieObj对象的所有属性复制给movie，再返回movie
             postMovie.save(function(err, movie) {
                 if (err) {
                     console.log(err);
                 }
-
-                // 重定向
-                res.redirect('/detail/' + movie._id);//回到更新后的电影详细页
+                res.redirect('/detail/' + movie._id); 
             });
         });
     } else {
-        postMovie = new movieModel({ //不存在则一项项创建
+        postMovie = new movieModel({ // 不存在则一项项创建
             title: movieObj.title,
             doctor: movieObj.doctor,
             country: movieObj.country,
@@ -88,14 +83,12 @@ exports.movie_save = function(req, res) {
             if (err) {
                 console.log(err);
             }
-
-            // 重定向
-            res.redirect('/detail/' + movie._id);   //回到更新后的电影详细页
+            res.redirect('/detail/' + movie._id);   
         });
     }
 };
 
-// GET movie-list page.
+// 获取后台电影管理页 get
 exports.movie_list = function(req, res) {
     movieModel.findAll(function(err, movies) {
         if (err) {
@@ -109,7 +102,7 @@ exports.movie_list = function(req, res) {
     });
 };
 
-// movie- page - update
+// 获取后台电影更新页 get
 exports.movie_update = function(req, res) {
     let id = req.params.id;
 
@@ -123,7 +116,7 @@ exports.movie_update = function(req, res) {
     }
 };
 
-// movie- page - delete
+// 根据id删除电影 delete
 exports.movie_delete = function(req, res) {
     let id = req.query.id;
 

@@ -19,18 +19,7 @@ block content
                       .media-body
                         h4.media-heading #{item.from}
                         p #{item.content}
-                        //- if item.reply && item.reply.length > 0
-                          each reply in item.reply
-                            .media
-                              .pull-left
-                                a.comment(href="#comments", data-cid=item._id, data-tid=reply.from._id)
-                                  img.media-object(src="/images/64.svg", style="width: 64px; height: 64px;")
-                              .media-body
-                                h4.media-heading
-                                  | #{reply.from.name}
-                                  span.text-info &nbsp;回复&nbsp;
-                                  | #{reply.to.name}:
-                                p #{reply.content}
+                        
                     hr
                 #comments
                   form#commentForm(method="POST", action="/detail/comment")
