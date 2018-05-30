@@ -1,10 +1,3 @@
-/*
- * @Author: bxm09
- * @Date:   2017-07-20 08:30:59
- * @Last Modified by:   bxm09
- * @Last Modified time: 2017-07-20 08:41:26
- */
-
 /**
  * 分类模型
  */
@@ -26,7 +19,7 @@ let categorySchema = new mongoose.Schema({
     },
     movie: [{
         type: ObjectId,
-        ref: 'movieModel'  //外键
+        ref: 'movieModel'  // 外键
     }],
     meta: {
         createAt: {

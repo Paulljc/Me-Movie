@@ -1,10 +1,3 @@
-/*
-* @Author: bxm09
-* @Date:   2017-07-19 23:42:55
-* @Last Modified by:   bxm09
-* @Last Modified time: 2017-07-20 08:40:39
-*/
-
 /**
  * 评论模型
  */
@@ -23,7 +16,7 @@ let ObjectId = mongoose.Schema.Types.ObjectId;
 let commentSchema = new mongoose.Schema({
     movie: {
         type: ObjectId,
-        ref: 'movieModel'   //外键
+        ref: 'movieModel'   // 外键
     },
     from: {
         type: ObjectId,

@@ -1,4 +1,4 @@
-# Me-Movie
+﻿# Me-Movie
 ### Simple_Movie_Website
 
 
@@ -49,7 +49,7 @@ npm install 安装依赖
 
 #### 依赖包
 
-- underscore：underscore提供了一套完善的函数式编程的接口，让我们更方便地在JavaScript中实现函数式编程，会把自身绑定到唯一的全局变量_上。(自行了解)
+- underscore：underscore提供了一套完善的函数式编程的接口，让我们更方便地在JavaScript中实现函数式编程，会把自身绑定到唯一的全局变量_上。其实，也可以去看看Lodash，简化一下代码。
 
 - bcryptjs： bcryptjs是一个第三方密码加密库。
 

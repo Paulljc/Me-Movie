@@ -1,9 +1,9 @@
-
 /**
  * 用户模型
  */
+
 const mongoose = require('mongoose');
-const bcryptjs = require('bcryptjs');//bcryptjs是一个第三方密码加密库，是对原有bcrypt的优化，优点是不需要安装任何依赖
+const bcryptjs = require('bcryptjs'); // bcryptjs是一个第三方密码加密库，是对原有bcrypt的优化，优点是不需要安装任何依赖
 
 const SALT_WORK_FACTOR = 10; //盐的强度 表示密码加密的计算强度，从1级到10级，强度越高，密码越复杂，计算时间也越长。
 
@@ -99,7 +99,7 @@ userSchema.statics = {
 userSchema.methods = {
     comparePassword: function(password, cb) {
         // this.password 数据库中的 password
-        bcryptjs.compare(password, this.password, function(err, isMatch) { //密码验证 this.password是存在Schema的pw一致
+        bcryptjs.compare(password, this.password, function(err, isMatch) { // 密码验证 this.password是存在Schema的pw一致
             if (err) {
                 return cb(err);
             }

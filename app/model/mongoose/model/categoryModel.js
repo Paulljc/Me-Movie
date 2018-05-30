@@ -1,10 +1,3 @@
-/*
-* @Author: bxm09
-* @Date:   2017-07-20 08:31:46
-* @Last Modified by:   bxm09
-* @Last Modified time: 2017-07-20 08:36:04
-*/
-
 let mongoose = require('mongoose');
 let categorySchema = require('../schema/categorySchema');
 

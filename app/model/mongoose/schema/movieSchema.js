@@ -1,11 +1,12 @@
-
 /**
  * 电影模型 Schema -> Model -> Entity
  */
-const mongoose = require('mongoose');//都是基于mongoose来创建的
+
+const mongoose = require('mongoose');
 
 // 在声明中指定 ObjectId 类型，MongoDB采用了ObjectId的类型来做主键。MongoDB默认在ObjectId上建立索引，是按照插入时间排序的。ObjectId是一个12字节的 BSON 类型字符串。按照字节顺序，一次代表：
 /*4字节：UNIX时间戳   3字节：表示运行MongoDB的机器  2字节：表示生成此_id的进程 3字节：由一个随机数开始的计数器生成的值*/
+
 let ObjectId = mongoose.Schema.Types.ObjectId;
 
 /**
@@ -24,8 +25,8 @@ let movieSchema = new mongoose.Schema({
     summary: String,
     language: String,
     category: {
-        type: ObjectId, //设置对象ID类型
-        ref: 'categoryModel'    //作为外键 当要把电影信息从数据库中取出来的时候 顺便把相关评论带出来渲染给页面
+        type: ObjectId, 
+        ref: 'categoryModel'  
     },
     meta: {
         createAt: {
