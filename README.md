@@ -1,17 +1,13 @@
 ﻿# Me-Movie
 ### Simple_Movie_Website
 
+`git clone https://github.com/Paulljc/Me-Movie.git` 下载项目到本地
 
-跟Blog项目的差不多，git clone 下载项目到本地
+`npm install` 安装依赖
 
-npm install 安装依赖
+安装MongoDB 并开启服务 具体可以看看 Blog 中的指令 这里不做详细说明
 
-安装MongoDB 并开启服务 具体可以看看Blog中的指令 这里先不做详细说明
-
-开启数据库服务，然后用 npm start 启动项目
-
-因为第一次数据库初始化在Schema中身份是超级管理员
-可以直接进行注册，注册完成之后自己去改一下用户表修改权限
+开启数据库服务，然后用 `npm start` 启动项目
 
 ### 技术栈
 
